@@ -1,0 +1,72 @@
+// eslint-disable-next-line import/no-anonymous-default-export
+export default [
+     {
+          shoeName: "Adidas NMD_R1 TRAIL GORE-TEX SHOES",
+          shoePrice: "18000",
+          shoeQuantity: 1,
+          shoeImage: process.env.PUBLIC_URL + "/Logos/All-shoes/shoe1.svg",
+          number: "1",
+     },
+     {
+          shoeName: "Adidas NIZZA TREFOIL SHOES",
+          shoePrice: "18000",
+          shoeImage: process.env.PUBLIC_URL + "/Logos/All-shoes/shoe2.svg",
+          shoeQuantity: 1,
+          number: "2",
+     },
+     {
+          shoeName: "Adidas ZX 2K BOOST PURE SHOES",
+          shoePrice: "18000",
+          shoeImage: process.env.PUBLIC_URL + "/Logos/All-shoes/shoe3.svg",
+          shoeQuantity: 1,
+          number: "3",
+     },
+     {
+          shoeName: "Adidas NMD_R1 SHOES",
+          shoePrice: "18000",
+          shoeImage: process.env.PUBLIC_URL + "/Logos/All-shoes/shoe4.svg",
+          shoeQuantity: 1,
+          number: "4",
+     },
+     {
+          shoeName: "Adidas NMD_R1 SHOES",
+          shoePrice: "18000",
+          shoeImage: process.env.PUBLIC_URL + "/Logos/All-shoes/shoe4.svg",
+          shoeQuantity: 1,
+          number: "5",
+     },
+     {
+          shoeName: "Nike Daybreak SHOE",
+          shoePrice: "18000",
+          shoeImage: process.env.PUBLIC_URL + "/Logos/All-shoes/shoe5.svg",
+          number: "6",
+     },
+     {
+          shoeName: "Nike Air Zoom SuperRep 2",
+          shoePrice: "18000",
+          shoeImage: process.env.PUBLIC_URL + "/Logos/All-shoes/shoe6.svg",
+          shoeQuantity: 1,
+          number: "7",
+     },
+     {
+          shoeName: "NIKE AIR MAX 1 BY YOU",
+          shoePrice: "18000",
+          shoeImage: process.env.PUBLIC_URL + "/Logos/All-shoes/shoe7.svg",
+          shoeQuantity: 1,
+          number: "9",
+     },
+     {
+          shoeName: "NIKE REACT VISION BY YOU",
+          shoePrice: "18000",
+          shoeImage: process.env.PUBLIC_URL + "/Logos/All-shoes/shoe8.svg",
+          shoeQuantity: 1,
+          number: "10",
+     },
+     {
+          shoeName: "NIKE REACT VISION BY YOU",
+          shoePrice: "18000",
+          shoeImage: process.env.PUBLIC_URL + "/Logos/All-shoes/shoe8.svg",
+          shoeQuantity: 1,
+          number: "11",
+     },
+];

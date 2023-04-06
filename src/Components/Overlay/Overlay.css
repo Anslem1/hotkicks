@@ -1,0 +1,104 @@
+.single-product-overlay  {
+     position: absolute;
+     width: 100%;
+     height: 120vw;
+     background-color: #000;
+     opacity: 0.5;
+     z-index: 999999999999;
+    }
+    
+    .home-overlay{
+    height: 170vw;
+
+}
+.overlay-overflow {
+     overflow: hidden;
+     /* background-color: #000; */
+     /* background-color: green; */
+}
+
+.single-overlay-product-container > div {
+     z-index: 999999999999;
+     /* opacity: ; */
+     position: fixed;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     width: 99.9%;
+     height: 100%;
+     /* border: 1px solid #fff; */
+}
+.single-overlay-product-container > div > div {
+     background-color: #fff;
+     padding: 40px;
+     border-radius: 10px;
+}
+.single-overlay-product-container > div > div > h1 {
+     text-align: center;
+     margin-bottom: 30px;
+     font-size: 15px;
+
+     font-family: Roboto;
+}
+.single-overlay-product-container > div > div > div {
+     align-items: center;
+     display: flex;
+     /* flex-direction: column; */
+     justify-content: space-between;
+     gap: 10px;
+     /* width: 35%; */
+     /* height: 150px; */
+}
+.single-overlay-product-container > div > div > div > div {
+     /* align-items: center; */
+     display: flex;
+     flex-direction: column;
+     gap: 10px;
+}
+.single-overlay-product-container > div > div > div > div > p {
+     font-family: Roboto;
+     font-size: 13px;
+     inline-size: 80%;
+}
+.single-overlay-product-container > div > div > div img {
+     width: 100px;
+}
+
+.overlay-btn-container {
+     display: flex;
+     align-items: center;
+     gap: 20px;
+     justify-content: center;
+     margin-top: 30px;
+}
+.overlay-btn-container p {
+     font-size: 12px;
+     font-family: Roboto;
+     color: rgba(159, 65, 150, 1);
+     cursor: pointer;
+     color: rgba(159, 65, 150, 1);
+}
+.overlay-btn-container button {
+     font-size: 12px;
+     font-family: Roboto;
+     padding: 10px;
+     cursor: pointer;
+     width: 150px;
+     color: #fff;
+     background: rgba(169, 125, 60, 1);
+     border: none;
+     border-radius: 10px;
+}
+
+@media screen and (max-width: 540px) {
+     .single-overlay-product-container > div > div  {
+       width: 70%;
+     }
+     .single-product-overlay {
+     position: absolute;
+     width: 100%;
+     height: 1000px;
+   
+   ;
+}
+}
