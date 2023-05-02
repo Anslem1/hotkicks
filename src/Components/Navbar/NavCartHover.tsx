@@ -54,16 +54,17 @@ export function NavCartHover({ setShowCartOverlay, cart, setCart, cartItemSummar
         });
         setCartItemSummary(summary);
     }, [setCart, setCartItemSummary, setShoeCartQuantities]);
+
     const handleQuantityChange = (index: number, newQuantity: number) => {
         setShoeCartQuantities((prevQuantities: any) => {
             const updatedQuantities = [...prevQuantities];
             updatedQuantities[index] = newQuantity;
-            console.log({ updatedQuantities })
+    
             setCart((prevCart: CartItem[]) => {
                 const updatedCart = [...prevCart]; // make a copy of the cart array
                 updatedCart[index] = { ...updatedCart[index], shoeQuantity: newQuantity };
                 localStorage.setItem('cartProducts', JSON.stringify(updatedCart));
-                console.log({ updatedCart })
+             
                 return updatedCart;
 
             });

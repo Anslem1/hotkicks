@@ -8,7 +8,7 @@ type NavProps = {
 
 
 function MobileNav({ cartLength }: NavProps) {
-    const [overlay, setOverlay] = useState(true);
+    const [overlay, setOverlay] = useState(false);
 
     return (
         <>
@@ -27,8 +27,12 @@ function MobileNav({ cartLength }: NavProps) {
                     className="mobile-hamburger-container"
 
                 >
-                    <Link to='/cart' className='mobile-cart'>
+                    <Link to='/cart'
+                        // className='mobile-cart'
+                        className='cart-nav'
+                    >
                         <i className="fa-solid fa-cart-shopping"></i>
+
                         <div>
                             <span>{cartLength}</span>
                         </div>
@@ -69,7 +73,7 @@ function MobileNav({ cartLength }: NavProps) {
                                 <Link to={'/register'} onClick={() => setOverlay(false)}>REGISTER</Link>
                             </div>
                         </div>
-                        <img src={sideNavLogo} alt=""  className='side-nav-logo'/>
+                        <img src={sideNavLogo} alt="" className='side-nav-logo' />
                     </div>
                 )}
             </nav>

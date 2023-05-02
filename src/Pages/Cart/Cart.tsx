@@ -57,12 +57,12 @@ function Cart({ cart, setCart, cartItemSummary, setCartItemSummary, shoeCartQuan
         setShoeCartQuantities((prevQuantities: any) => {
             const updatedQuantities = [...prevQuantities];
             updatedQuantities[index] = newQuantity;
-            console.log({ updatedQuantities })
+
             setCart((prevCart: CartItem[]) => {
                 const updatedCart = [...prevCart]; // make a copy of the cart array
                 updatedCart[index] = { ...updatedCart[index], shoeQuantity: newQuantity };
                 localStorage.setItem('cartProducts', JSON.stringify(updatedCart));
-                console.log({ updatedCart })
+
                 return updatedCart;
 
             });
@@ -71,7 +71,7 @@ function Cart({ cart, setCart, cartItemSummary, setCartItemSummary, shoeCartQuan
         });
         setCartItemSummary((prevSummary: any) => {
             const updatedSummary = [...prevSummary];
-            console.log({updatedSummary})
+
             updatedSummary[index].shoeTotalQuantity = newQuantity;
             updatedSummary[index].shoeTotalPrice = newQuantity * cart[index].shoePrice;
             return updatedSummary;
@@ -95,8 +95,7 @@ function Cart({ cart, setCart, cartItemSummary, setCartItemSummary, shoeCartQuan
         });
     };
 
-
-    console.log({ cartItemSummary })
+    console.log({ cart })
     // loc
 
     return (

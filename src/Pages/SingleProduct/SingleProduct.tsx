@@ -23,7 +23,7 @@ function SingleProduct(props: any) {
 
     useEffect(() => {
         setSingleProject(singleProjectObject)
-    }, [singleProjectObject])
+    }, [])
 
     console.log(singleProject)
 

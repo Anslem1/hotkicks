@@ -29,7 +29,6 @@
 .cart-nav > div {
      width: 100%;
      height: 100%;
-
      bottom: 10px;
      right: 15px;
      display: flex;
@@ -42,14 +41,9 @@
 }
 .cart-nav div span {
      font-size: 15px;
-     /* padding-left: 40%;
-          padding-bottom: 10%;
-          padding-top: 20%;
-          padding-right: 40%; */
-     /* width: 25vw; */
-     /* height: 20vw; */
+
 }
-/* * */
+
 .nav-category > div {
      display: flex;
      align-items: center;
@@ -263,7 +257,7 @@
      justify-content: space-between;
 }
 
-@media screen and (max-width: 540px) {
+@media screen and (max-width: 1000px) {
      .navbar-container {
           display: none;
      }
@@ -296,7 +290,7 @@
           display: flex;
           align-items: center;
           height: 100%;
-          gap: 10px;
+          gap: 20px;
      }
 
      .hover-nav {
@@ -334,6 +328,23 @@
 
      .mobile-hamburger-container {
           margin-right: 35px;
+     }
+
+     .mobile-hamburger-container > a {
+          display: flex;
+          align-items: center;
+          position: relative;
+     }
+     .mobile-hamburger-container > a > i {
+          color: #fff;
+          font-size: 20px;
+     }
+     .mobile-hamburger-container > a > div  {
+          font-size: 20px;
+       padding: 1px 0px;
+          color: #fff;
+          font-family: Roboto;
+         
      }
 
      .mobile-hamburger-container > div > div {

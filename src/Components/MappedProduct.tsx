@@ -20,7 +20,7 @@ type ProductProps = {
 const MappedProduct = forwardRef<HTMLDivElement, ProductProps>(
     ({ outterDiv, innerDiv, width, shoeItem, setShowOverlay, footer }, ref) => {
 
-        console.log({ footer })
+
         const locate = useLocation()
 
 
@@ -37,7 +37,6 @@ const MappedProduct = forwardRef<HTMLDivElement, ProductProps>(
         const paginate = (pageNumber: number) => setCurrentShoePage(pageNumber)
 
 
-        console.log({ currentShoePage })
 
         for (let index = 1; index <= Math.ceil(shoeArray.length / shoePostPerPage); index++) {
             shoePageNumbers.push(index)
@@ -60,7 +59,6 @@ const MappedProduct = forwardRef<HTMLDivElement, ProductProps>(
 
 
 
-        console.log(shoePageNumbers)
 
         return (
             <>
@@ -105,7 +103,7 @@ const MappedProduct = forwardRef<HTMLDivElement, ProductProps>(
                         <i className="fa-solid fa-arrow-left"></i>
                     </button>
                     {shoePageNumbers.map((number, index) => {
-                        console.log({ number })
+                      
                         return (<>
                             <p key={index} className={number === currentShoePage ? 'current-active' : ''} onClick={() => {
                                 paginate(number)

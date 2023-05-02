@@ -42,6 +42,7 @@ function Navbar({ cartLength, cart, setCart, cartItemSummary, setCartItemSummary
                 <div className="nav-login-cart">
                     <Link to='/register'>Register</Link>
                     <Link to='/signin'>Sign in</Link>
+                    
                     <Link to='/cart' className='cart-nav' onClick={() => showCartOverlay && setShowCartOverlay(false)} onMouseOver={() => {
 
                         locate.pathname === '/cart' ? setShowCartOverlay(false) : setShowCartOverlay(true)

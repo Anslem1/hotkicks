@@ -14,9 +14,8 @@ function Women({ shoeItem, setShowOverlay, showOverlay }: shoeItemProps) {
 
         window.addEventListener('resize', handleResize);
 
-        // Clean up event listener on unmount
         return () => window.removeEventListener('resize', handleResize);
-    }, [window.innerWidth]);
+    }, []);
     return (
         <>
             <Overlay showOverlay={showOverlay} setShowOverlay={setShowOverlay} />

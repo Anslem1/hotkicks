@@ -76,7 +76,7 @@ function App() {
                };
           });
           setCartItemSummary(summary);
-     }, [setCart, setCartItemSummary, setShoeCartQuantities]);
+     }, []);
 
 
 
