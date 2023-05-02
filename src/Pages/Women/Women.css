@@ -3,20 +3,22 @@
      /* width: 0%; */
 }
 
-
 .women-container > div {
      margin-top: 200px;
-     /* padding: 5px; */
+     /* border: 1px solid;
+     width: 90%;
+
+     margin: 200px auto; */
 }
 
 .women-container > div > h1 {
-     padding-left: 2vw;
-     /* font-size: 4vw; */
      margin-bottom: 30px;
      font-family: Roboto;
-     /* position: absolute; */
-}
 
+     width: 84%;
+     margin: 20px auto;
+     /* text-align: center; */
+}
 @media screen and (max-width: 540px) {
      .women-container > div {
           margin-top: 120px;
@@ -27,6 +29,5 @@
           font-size: 6vw;
           margin-bottom: 30px;
           font-family: Roboto;
-          /* position: absolute; */
      }
 }

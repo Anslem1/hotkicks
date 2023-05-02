@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { LogoImage } from '../../../ImageExports'
+import { LogoImage, sideNavLogo } from '../../../ImageExports'
 
 type NavProps = {
     cartLength: number;
@@ -8,7 +8,7 @@ type NavProps = {
 
 
 function MobileNav({ cartLength }: NavProps) {
-    const [overlay, setOverlay] = useState(false);
+    const [overlay, setOverlay] = useState(true);
 
     return (
         <>
@@ -64,7 +64,12 @@ function MobileNav({ cartLength }: NavProps) {
                                     <p>Categories <span> {'>'}</span></p>
                                 </div>
                             </div>
+                            <div className='mobile-signin-overlay'>
+                                <Link to={'/signin'} onClick={() => setOverlay(false)}>SIGN IN</Link>
+                                <Link to={'/register'} onClick={() => setOverlay(false)}>REGISTER</Link>
+                            </div>
                         </div>
+                        <img src={sideNavLogo} alt=""  className='side-nav-logo'/>
                     </div>
                 )}
             </nav>

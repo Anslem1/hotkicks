@@ -16,7 +16,7 @@ function Signin() {
                                 <div className='header-container'>
                                     <div>
                                         <h1>Welcome back</h1>
-                                        <p>Fill in your details to Sign in to your account</p>
+                                        <p>Fill in your details to sign in to your account</p>
                                     </div>
                                 </div>
 
@@ -28,8 +28,18 @@ function Signin() {
                                     <p>Password</p>
                                     <input type="password" />
                                 </div>
+                                <div className='forgot-password-container'>
+                                    <div>
+                                        <input type="checkbox" />
 
-                                <button>SIGNIN</button>
+
+                                        Remember me
+
+                                    </div>
+                                    <p>Forgot password?</p>
+                                </div>
+
+                                <button>SIGN IN</button>
                                 <div className='singin-btn-container'>
 
 

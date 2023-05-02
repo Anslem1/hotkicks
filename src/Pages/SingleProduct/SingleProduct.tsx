@@ -1,10 +1,31 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import MappedProduct from '../../Components/MappedProduct';
 import './SingleProduct.css'
 
+type SingleProjectProps = {
+    shoeImage: string;
+    shoeName: string;
+    shoeQunatity: number;
+    shoeColor: string;
+    shoeSize: number | null;
+}
+
 function SingleProduct(props: any) {
     const projectObject = localStorage.getItem('projectObject');
-    const singleProject = projectObject ? JSON.parse(projectObject) : null;
+    const singleProjectObject = projectObject ? JSON.parse(projectObject) : null;
+    const [singleProject, setSingleProject] = useState<SingleProjectProps>({
+        shoeImage: "",
+        shoeName: "",
+        shoeQunatity: 1,
+        shoeColor: "",
+        shoeSize: null
+    });
+
+    useEffect(() => {
+        setSingleProject(singleProjectObject)
+    }, [singleProjectObject])
+
+    console.log(singleProject)
 
 
     return (

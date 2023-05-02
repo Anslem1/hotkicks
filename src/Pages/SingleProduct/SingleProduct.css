@@ -183,10 +183,13 @@
 .single-product-other-container {
      display: flex;
      margin-top: 50px;
-     overflow: scroll;
-     gap: 20px;
-     margin-bottom: 40px;
 
+     overflow: auto;
+     padding: 10px;
+     margin: 0 auto;
+     justify-content: center;
+     width: 90% !important;
+     /* height: 30px; */
 }
 .single-product-other-container > div {
      box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
@@ -227,6 +230,7 @@
      .single-product-container {
           /* width: 80%; */
           overflow: hidden;
+          /* border: 100px solid; */
      }
 
      .single-product-container > div > div > h1 {

@@ -41,6 +41,8 @@ interface CartItemSummary {
 
 
 function App() {
+
+
      const [cart, setCart] = useState<CartItem[]>([]);
      const [cartItemSummary, setCartItemSummary] = useState<CartItemSummary[]>([])
      const [shoeCartQuantities, setShoeCartQuantities] = useState<number[]>(cart.map(() => 1));
@@ -125,7 +127,9 @@ function App() {
                     <Route path="/product/:name" element={<SingleProduct shoeItem={shoeItem} shoeQuantity={shoeQuantity} setShoeQuantity={setShoeQuantity} />} />
                </Routes>
                {
-                    path === '/success' || path === '/register' || path === '/signin' ? '' : <Footer />
+                    path === '/success' || path === '/register' || path === '/signin' ? '' : <Footer shoeItem={shoeItem}
+                         setShowOverlay={setShowOverlay}
+                         showOverlay={showOverlay} />
                }
           </>
      );

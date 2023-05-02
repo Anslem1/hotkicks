@@ -7,6 +7,7 @@ export const FooterImage = process.env.PUBLIC_URL + "/Logos/Footer-logo.svg";
 export const SigninHOK = process.env.PUBLIC_URL + "/Logos/signupHOK.svg";
 export const payWithCard = process.env.PUBLIC_URL + "/Logos/paywithcard.svg";
 export const success = process.env.PUBLIC_URL + "/Logos/HOKSUCCESS.svg";
+export const sideNavLogo = process.env.PUBLIC_URL + "/Logos/HOK-sidenav.svg";
 
 export function formatToCurrency(amount: any) {
      const num = parseFloat(amount);

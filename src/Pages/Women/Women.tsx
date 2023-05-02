@@ -22,8 +22,8 @@ function Women({ shoeItem, setShowOverlay, showOverlay }: shoeItemProps) {
             <Overlay showOverlay={showOverlay} setShowOverlay={setShowOverlay} />
             <div className={`women-container ${showOverlay && 'overlay-overflow'}`}>
                 <div>
-                    <h1>Women</h1>
 
+                        <h1>Women</h1>
                     <div>
                         <MappedProduct outterDiv='product-container' innerDiv='product-details' width={screenWidth >= 540 ? '18%' : '40%'} shoeItem={shoeItem} setShowOverlay={setShowOverlay} />
                     </div>

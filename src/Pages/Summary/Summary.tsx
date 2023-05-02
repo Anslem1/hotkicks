@@ -17,16 +17,27 @@ function Summary() {
 
     useEffect(() => {
         const storedCartSummary: CartItemSummary[] = cartProducts ? JSON.parse(cartProducts) : [];
-        setSummaryItems(storedCartSummary)
-        console.log({ storedCartSummary })
-    }, [cartProducts])
+        const summaryItemsWithPrice = storedCartSummary.map((item: any) => {
+            return {
+                ...item,
+                shoeTotalPrice: parseFloat(item.shoeTotalPrice), // parse the price into a number
+            };
+        });
+        setSummaryItems(summaryItemsWithPrice);
+    }, [cartProducts]);
 
-    const summaryTotal = summaryItems.reduce((accumulator, item) => {
-        return accumulator + item.shoeTotalPrice;
-    }, 0);
+    const summaryItemsWithPrice = summaryItems.map((item) => {
+        const price = item.shoeTotalPrice / item.shoeTotalQuantity;
 
-    console.log({ summaryTotal })
+        return {
+            ...item,
+            shoePrice: price,
+        };
+    });
 
+
+    const summaryMapTotal = summaryItems.map((item) => item.shoeTotalPrice)
+    const summaryTotal = summaryMapTotal.reduce((total, num) => total + num, 0)
 
 
     return (
@@ -45,8 +56,11 @@ function Summary() {
                                     </tr>
                                     {
                                         summaryItems.map((item) => <tr>
+
                                             <td className='item-th'>{item.shoeName}</td>
                                             <td>{(item.shoeTotalQuantity)}</td>
+
+
                                             <td>{formatToCurrency(item.shoeTotalPrice)}</td>
                                         </tr>)
                                     }

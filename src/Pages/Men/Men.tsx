@@ -20,7 +20,7 @@ function Men({ shoeItem, setShowOverlay, showOverlay }: shoeItemProps) {
     }, [window.innerWidth]);
     return (
         <>
-        <Overlay showOverlay={showOverlay} setShowOverlay={setShowOverlay} />
+            <Overlay showOverlay={showOverlay} setShowOverlay={setShowOverlay} />
             <div className={`women-container ${showOverlay && 'overlay-overflow'}`}
             >
                 <div>

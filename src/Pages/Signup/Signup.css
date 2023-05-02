@@ -10,13 +10,41 @@
 }
 .header-container > div > p {
      font-family: Roboto;
+     color: rgba(78, 75, 102, 1);
 
-     color: #8d8a8a;
+     /* color: #8d8a8a; */
      font-size: 0.95vw;
+}
+.signin-container {
+     overflow: hidden;
+     /* border: 10px solid pink; */
 }
 .signin-container > div {
      display: flex;
      justify-content: center;
+}
+
+.forgot-password-container {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     margin-bottom: 10px;
+}
+.forgot-password-container p:nth-of-type(1) {
+     color: rgba(159, 65, 150, 1);
+     font-family: Roboto;
+     font-weight: 700;
+     font-size: 15px;
+}
+.forgot-password-container > div {
+     display: flex;
+     align-items: center;
+     gap: 5px;
+     font-family: Roboto;
+     font-weight: 700;
+     font-size: 15px;
+}
+.forgot-password-container > div p {
 }
 
 .input-container {
@@ -56,6 +84,7 @@
      font-family: Roboto;
      border-radius: 10px;
      font-weight: 700;
+     margin-bottom: 20px;
 }
 
 .singin-btn-container {
@@ -74,6 +103,7 @@
      align-items: center;
      justify-content: center;
      gap: 7px;
+     font-weight: 200;
 }
 
 .singin-btn-container > button > img {
@@ -133,7 +163,7 @@
      font-family: Roboto;
      margin-bottom: 30px;
 }
-.new-user > span >a {
+.new-user > span > a {
      color: rgba(159, 65, 150, 1);
      font-weight: 700;
 }
@@ -153,7 +183,6 @@
           font-size: 5vw;
      }
      .header-container > div > p {
-
           font-size: 2vw;
      }
      .input-container > div > div {

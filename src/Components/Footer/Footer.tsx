@@ -2,12 +2,11 @@ import React, { useRef } from 'react'
 import { FooterImage } from '../../ImageExports'
 import MappedProduct from '../MappedProduct'
 import './Footer.css'
+import { shoeItemProps } from '../../types';
 
 
 
-
-
-function Footer() {
+function Footer({ shoeItem, setShowOverlay, showOverlay }: shoeItemProps) {
 
     const scrollRef = useRef<HTMLDivElement>(null);
 
@@ -27,6 +26,8 @@ function Footer() {
                         ref={scrollRef}
                         outterDiv='footer-best-seller-container'
                         innerDiv='footer-best-seller-content'
+                        footer={'footer'}
+                        shoeItem={shoeItem} setShowOverlay={setShowOverlay}
                     />
 
                     <button className='scroll-btn' onClick={() => handleScroll(100)}>{">"}</button>

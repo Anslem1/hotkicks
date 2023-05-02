@@ -16,7 +16,7 @@ function Signup() {
                                 <div className='header-container'>
                                     <div>
                                         <h1>CREATE AN ACCOUNT</h1>
-                                        <p>Fill in your details to Sign in to your account</p>
+                                        <p>Fill in your details to create an account</p>
                                     </div>
                                 </div>
                                 <div className='input-content'>
@@ -33,7 +33,7 @@ function Signup() {
                                 </div>
 
 
-                                <button>SIGNIN</button>
+                                <button>SIGN UP</button>
                                 <div className='singin-btn-container'>
 
                                     <button> <img src={process.env.PUBLIC_URL + '/stackimages/google.png'} alt="" /> SIGN IN WITH GOOGLE</button>

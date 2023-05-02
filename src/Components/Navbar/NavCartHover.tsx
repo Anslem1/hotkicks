@@ -80,13 +80,26 @@ export function NavCartHover({ setShowCartOverlay, cart, setCart, cartItemSummar
 
 
 
-    // const cartTotal = cart.reduce((total: number, item: CartItem) => {
-    //     return total + item.shoePrice * item.shoeQuantity;
-    // }, 0);
+
+    const handleRemoveItem = (index: number) => {
+        const updatedCart = [...cart];
+        updatedCart.splice(index, 1);
+        localStorage.setItem('cartProducts', JSON.stringify(updatedCart));
+        setCart(updatedCart);
+        setShoeCartQuantities((prevQuantities: number[]) => {
+            const updatedQuantities = [...prevQuantities];
+            updatedQuantities.splice(index, 1);
+            return updatedQuantities;
+        });
+        setCartItemSummary((prevSummary: any) => {
+            const updatedSummary = [...prevSummary];
+            updatedSummary.splice(index, 1);
+            return updatedSummary;
+        });
+    };
 
 
 
-    console.log({ cart })
 
     return (
         <>
@@ -144,7 +157,16 @@ export function NavCartHover({ setShowCartOverlay, cart, setCart, cartItemSummar
                                         </div>
 
                                         <p>{formatToCurrency(item.shoePrice * item.shoeQuantity)}</p>
+                                        <p className='remove-cart' onClick={() =>
+
+
+                                            handleRemoveItem(index)
+
+                                        }>
+                                            <i className='fa-solid fa-trash'></i>
+                                        </p>
                                     </div>
+
                                 </div>)}
 
                         </section>
