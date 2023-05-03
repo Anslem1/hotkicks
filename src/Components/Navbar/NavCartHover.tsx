@@ -59,12 +59,12 @@ export function NavCartHover({ setShowCartOverlay, cart, setCart, cartItemSummar
         setShoeCartQuantities((prevQuantities: any) => {
             const updatedQuantities = [...prevQuantities];
             updatedQuantities[index] = newQuantity;
-    
+
             setCart((prevCart: CartItem[]) => {
                 const updatedCart = [...prevCart]; // make a copy of the cart array
                 updatedCart[index] = { ...updatedCart[index], shoeQuantity: newQuantity };
                 localStorage.setItem('cartProducts', JSON.stringify(updatedCart));
-             
+
                 return updatedCart;
 
             });
@@ -121,55 +121,58 @@ export function NavCartHover({ setShowCartOverlay, cart, setCart, cartItemSummar
 
 
                         <section>
-                            {cart.map((item: any, index: number) =>
-                                <div className="nav-hover-product-container">
+                            <div>
 
-                                    <div>
 
-                                        <div className="nav-hover-img-container">
+                                {cart.map((item: any, index: number) =>
+                                    <div className="nav-hover-product-container">
 
-                                            <img src={item.shoeImage} alt="" />
-                                            <div>
-                                                <p>{item.shoeName}</p>
+                                        <div>
+
+                                            <div className="nav-hover-img-container">
+
+                                                <img src={item.shoeImage} alt="" />
                                                 <div>
-                                                    <p>{item.shoeSex = 'Male'}</p>
-                                                    <p>Size {item.shoeSize = 44}</p>
-                                                    <p style={{ backgroundColor: item.shoeColor, padding: '6px' }} className='cart-shoe-color'></p>
+                                                    <p>{item.shoeName}</p>
+                                                    <div>
+                                                        <p>{item.shoeSex = 'Male'}</p>
+                                                        <p>Size {item.shoeSize = 44}</p>
+                                                        <p style={{ backgroundColor: item.shoeColor, padding: '6px' }} className='cart-shoe-color'></p>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
 
-                                        <p>{formatToCurrency(item.shoePrice)}</p>
-                                        <div className='hover-nav-quantity-container'>
-                                            <div>
-                                                <span
-                                                    onClick={() =>
-                                                        handleQuantityChange(
-                                                            index,
-                                                            shoeCartQuantities[index] <= 1 ? 1 : shoeCartQuantities[index] - 1
-                                                        )
-                                                    }
-                                                >
-                                                    -
-                                                </span>
-                                                <p>{item.shoeQuantity}</p>
-                                                <span onClick={() => handleQuantityChange(index, shoeCartQuantities[index] + 1)}>+</span>
+                                            <p>{formatToCurrency(item.shoePrice)}</p>
+                                            <div className='hover-nav-quantity-container'>
+                                                <div>
+                                                    <span
+                                                        onClick={() =>
+                                                            handleQuantityChange(
+                                                                index,
+                                                                shoeCartQuantities[index] <= 1 ? 1 : shoeCartQuantities[index] - 1
+                                                            )
+                                                        }
+                                                    >
+                                                        -
+                                                    </span>
+                                                    <p>{item.shoeQuantity}</p>
+                                                    <span onClick={() => handleQuantityChange(index, shoeCartQuantities[index] + 1)}>+</span>
+                                                </div>
                                             </div>
+
+                                            <p>{formatToCurrency(item.shoePrice * item.shoeQuantity)}</p>
+                                            <p className='remove-cart' onClick={() =>
+
+
+                                                handleRemoveItem(index)
+
+                                            }>
+                                                <i className='fa-solid fa-trash'></i>
+                                            </p>
                                         </div>
 
-                                        <p>{formatToCurrency(item.shoePrice * item.shoeQuantity)}</p>
-                                        <p className='remove-cart' onClick={() =>
-
-
-                                            handleRemoveItem(index)
-
-                                        }>
-                                            <i className='fa-solid fa-trash'></i>
-                                        </p>
-                                    </div>
-
-                                </div>)}
-
+                                    </div>)}
+                            </div>
                         </section>
 
 

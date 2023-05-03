@@ -103,7 +103,7 @@ function Cart({ cart, setCart, cartItemSummary, setCartItemSummary, shoeCartQuan
             {cart.length > 0 ? (
                 <div>
 
-                    <h1>SHOPPING CART ({localStorage.getItem('cartCount')} {cart.length === 1 ? 'ITEM' : 'ITEMS'})</h1>
+                    <h1>SHOPPING CART ({cart.length} {cart.length === 1 ? 'ITEM' : 'ITEMS'})</h1>
                     <div className="product-header">
                         <p>PRODUCT DETAILS</p>
                         <div>
