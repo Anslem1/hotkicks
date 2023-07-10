@@ -1,12 +1,12 @@
 {
      "name": "Hotkicks",
-     "icons": [
-          {
-               "src": "profile.ico",
-               "sizes": "64x64 32x32 24x24 16x16",
-               "type": "image/x-icon"
-          }
-     ],
+   
+     "icons": {
+          "16": "Logos/HOK-Nav-logo.svg",
+          "32": "Logos/HOK-Nav-logo.svg",
+          "48": "Logos/HOK-Nav-logo.svg",
+          "128": "Logos/HOK-Nav-logo.svg"
+     },
      "start_url": ".",
      "display": "standalone",
      "theme_color": "#000000",
