@@ -4,22 +4,13 @@ import { LogoImage } from '../../ImageExports'
 
 import './Navbar.css'
 import { NavCartHover } from './NavCartHover'
+import { NavProps } from '../../types'
 
-type NavProps = {
-    cartLength: number
-    cart: any;
-    setCart: Function;
-    setCartItemSummary: Function;
-    cartItemSummary: any;
-    setShoeCartQuantities: Function;
-    shoeCartQuantities: any;
-    cartTotal: number;
-}
+
 
 
 function Navbar({ cartLength, cart, setCart, cartItemSummary, setCartItemSummary, shoeCartQuantities, setShoeCartQuantities, cartTotal }: NavProps) {
-    // const cartCount = localStorage.getItem('cartProducts')
-    // const storedCart = cartCount ? JSON.parse(cartCount) : "0";
+
 
     const [showCartOverlay, setShowCartOverlay] = useState<boolean>(false)
     const locate = useLocation()

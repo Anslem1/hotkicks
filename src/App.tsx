@@ -16,56 +16,34 @@ import Checkout from "./Pages/Checkout/Checkout";
 import RenderCart from "./Pages/Cart/RenderCart";
 import Summary from "./Pages/Summary/Summary";
 import Success from "./Pages/Success/Success";
-
-
-;
-
-
-
-
-interface CartItem {
-     id: number;
-     shoeImage: string;
-     shoeName: string;
-     shoeSize: string;
-     shoeColor: string;
-     shoePrice: number;
-     shoeQuantity: number;
-}
-
-interface CartItemSummary {
-     shoeName: string;
-     shoeTotalQuantity: number;
-     shoeTotalPrice: number;
-}
-
+import { CartItem, CartItemSummary } from "./types";
 
 function App() {
-
-
      const [cart, setCart] = useState<CartItem[]>([]);
-     const [cartItemSummary, setCartItemSummary] = useState<CartItemSummary[]>([])
-     const [shoeCartQuantities, setShoeCartQuantities] = useState<number[]>(cart.map(() => 1));
+     const [cartItemSummary, setCartItemSummary] = useState<CartItemSummary[]>(
+          []
+     );
+     const [shoeCartQuantities, setShoeCartQuantities] = useState<number[]>(
+          cart.map(() => 1)
+     );
 
-
-     function shoeItem(item: object) {
+     function shoeItem(item: {}) {
           setCart((prevCart: any) => [...prevCart, item]);
      }
 
-     const [shoeQuantity, setShoeQuantity] = useState<number>(1)
-     const [showOverlay, setShowOverlay] = useState<boolean>(false)
+     const [shoeQuantity, setShoeQuantity] = useState<number>(1);
+     const [showOverlay, setShowOverlay] = useState<boolean>(false);
 
+     localStorage.setItem("cartProducts", JSON.stringify(cart));
 
-     localStorage.setItem('cartProducts', JSON.stringify(cart))
-
-
-     const navigate = useLocation()
-     const path = navigate.pathname as string as '/success' | '/register';
-
+     const navigate = useLocation();
+     const path = navigate.pathname as string as "/success" | "/register";
 
      useEffect(() => {
-          const cartProducts = localStorage.getItem('cartProducts');
-          const storedCart: CartItem[] = cartProducts ? JSON.parse(cartProducts) : [];
+          const cartProducts = localStorage.getItem("cartProducts");
+          const storedCart: CartItem[] = cartProducts
+               ? JSON.parse(cartProducts)
+               : [];
           setCart(storedCart);
           setShoeCartQuantities(storedCart.map(() => 1));
           const summary: CartItemSummary[] = storedCart.map((item) => {
@@ -78,59 +56,107 @@ function App() {
           setCartItemSummary(summary);
      }, []);
 
-
-
-
      const cartTotal = cart.reduce((total: number, item: CartItem) => {
           return total + item.shoePrice * item.shoeQuantity;
      }, 0);
 
      return (
           <>
-               <RenderNav cartLength={cart.length} cart={cart} setCart={setCart} cartItemSummary={cartItemSummary} setCartItemSummary={setCartItemSummary} shoeCartQuantities={shoeCartQuantities} setShoeCartQuantities={setShoeCartQuantities} cartTotal={cartTotal} />
+               <RenderNav
+                    setCart={setCart}
+                    setShoeCartQuantities={setShoeCartQuantities}
+                    setCartItemSummary={setCartItemSummary}
+                    cartLength={cart.length}
+                    cart={cart}
+                    cartItemSummary={cartItemSummary}
+                    shoeCartQuantities={shoeCartQuantities}
+                    cartTotal={cartTotal}
+               />
                <Routes>
-                    <Route path="/" element={<Home
-                         shoeItem={shoeItem}
-                         setShowOverlay={setShowOverlay}
-                         showOverlay={showOverlay}
-
+                    <Route
+                         path="/"
+                         element={
+                              <Home
+                                   shoeItem={shoeItem}
+                                   setShowOverlay={setShowOverlay}
+                                   showOverlay={showOverlay}
+                              />
+                         }
                     />
-
-                    } />
-                    <Route path="/men" element={
-                         <Men
-                              shoeItem={shoeItem}
-                              setShowOverlay={setShowOverlay}
-                              showOverlay={showOverlay} />
-                    }
+                    <Route
+                         path="/men"
+                         element={
+                              <Men
+                                   shoeItem={shoeItem}
+                                   setShowOverlay={setShowOverlay}
+                                   showOverlay={showOverlay}
+                              />
+                         }
                     />
-                    <Route path="/women" element={
-                         <Women
-                              shoeItem={shoeItem}
-                              setShowOverlay={setShowOverlay}
-                              showOverlay={showOverlay}
-                         />
-                    }
+                    <Route
+                         path="/women"
+                         element={
+                              <Women
+                                   shoeItem={shoeItem}
+                                   setShowOverlay={setShowOverlay}
+                                   showOverlay={showOverlay}
+                              />
+                         }
                     />
-                    <Route path="/new-arrival" element={
-                         <NewArrivals
-                              shoeItem={shoeItem}
-                              setShowOverlay={setShowOverlay}
-                              showOverlay={showOverlay} />}
+                    <Route
+                         path="/new-arrival"
+                         element={
+                              <NewArrivals
+                                   shoeItem={shoeItem}
+                                   setShowOverlay={setShowOverlay}
+                                   showOverlay={showOverlay}
+                              />
+                         }
                     />
                     <Route path="/summary" element={<Summary />} />
                     <Route path="/success" element={<Success />} />
-                    <Route path="/cart" element={<RenderCart cart={cart} setCart={setCart} cartItemSummary={cartItemSummary} setCartItemSummary={setCartItemSummary} shoeCartQuantities={shoeCartQuantities} setShoeCartQuantities={setShoeCartQuantities} cartTotal={cartTotal} />} />
-                    <Route path="/checkout" element={<Checkout setCart={setCart} />} />
+                    <Route
+                         path="/cart"
+                         element={
+                              <RenderCart
+                                   cart={cart}
+                                   setCart={setCart}
+                                   cartItemSummary={cartItemSummary}
+                                   setCartItemSummary={setCartItemSummary}
+                                   shoeCartQuantities={shoeCartQuantities}
+                                   setShoeCartQuantities={setShoeCartQuantities}
+                                   cartTotal={cartTotal}
+                              />
+                         }
+                    />
+                    <Route
+                         path="/checkout"
+                         element={<Checkout setCart={setCart} />}
+                    />
                     <Route path="/register" element={<Signup />} />
                     <Route path="/signin" element={<Signin />} />
-                    <Route path="/product/:name" element={<SingleProduct shoeItem={shoeItem} shoeQuantity={shoeQuantity} setShoeQuantity={setShoeQuantity} />} />
+                    <Route
+                         path="/product/:name"
+                         element={
+                              <SingleProduct
+                                   shoeItem={shoeItem}
+                                   shoeQuantity={shoeQuantity}
+                                   setShoeQuantity={setShoeQuantity}
+                              />
+                         }
+                    />
                </Routes>
-               {
-                    path === '/success' || path === '/register' || path === '/signin' ? '' : <Footer shoeItem={shoeItem}
+               {path === "/success" ||
+               path === "/register" ||
+               path === "/signin" ? (
+                    ""
+               ) : (
+                    <Footer
+                         shoeItem={shoeItem}
                          setShowOverlay={setShowOverlay}
-                         showOverlay={showOverlay} />
-               }
+                         showOverlay={showOverlay}
+                    />
+               )}
           </>
      );
 }

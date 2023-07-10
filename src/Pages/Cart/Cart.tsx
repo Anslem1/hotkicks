@@ -49,9 +49,11 @@ function Cart({ cart, setCart, cartItemSummary, setCartItemSummary, shoeCartQuan
             };
         });
         setCartItemSummary(summary);
+        
     }, [setCart, setCartItemSummary, setShoeCartQuantities]);
 
 
+    
 
     const handleQuantityChange = (index: number, newQuantity: number) => {
         setShoeCartQuantities((prevQuantities: any) => {
